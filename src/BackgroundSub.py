@@ -37,7 +37,7 @@ while (1):
     motion = cv2.threshold(diffFrame, 10, 255, cv2.THRESH_BINARY)[1]
     #motion = cv2.inRange(motion, np.array([0,0,1]), np.array([255,255,255]))
 
-    #fill in black areas inside hand (dilation followed by erosion)
+    #fill in black areas inside hand 
     motion = cv2.morphologyEx(motion, cv2.MORPH_DILATE, kernel)
 
     #find countours of the image
