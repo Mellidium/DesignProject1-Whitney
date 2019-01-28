@@ -68,7 +68,7 @@ def load_labels(label_file):
   return label
 
 
-def classify(file):
+def classify(file, q):
     print("Start classify")
     file_name = file
     model_file = "tf_files/retrained_graph.pb"
@@ -136,7 +136,9 @@ def classify(file):
     print('\nEvaluation time (1-image): {:.3f}s\n'.format(end-start))
     template = "{} (score={:0.5f})"
     for i in top_k:
-       print(template.format(labels[i], results[i]))
+        q.put([labels[i]])
+        print(template.format(labels[i], results[i]))
+        break
 
     return "notrunning"
 
