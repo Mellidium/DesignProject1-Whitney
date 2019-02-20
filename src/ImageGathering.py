@@ -58,9 +58,9 @@ while (1):
 
     if save == 1:
         #change directory to match where you are saving, change the break count to say how many frames to capture
-        cv2.imwrite("C:/Users/reyfa/Desktop/Design Project Test Codes/hand_images/TestFiles/D.jpg", motion)
+        cv2.imwrite("C:/Users/reyfa/Desktop/Design Project Test Codes/tf_files/hand_images/Empty/%s.jpg" % count, motion)
         count += 1
-        if count >= 1:
+        if count >= 1500:
             break
 
     cv2.imshow("frame", frame)
